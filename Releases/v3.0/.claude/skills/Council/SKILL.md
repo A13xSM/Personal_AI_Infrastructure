@@ -52,6 +52,7 @@ Running the **WorkflowName** workflow in the **Council** skill to ACTION...
 | Trigger | Workflow |
 |---------|----------|
 | Full structured debate (3 rounds, visible transcript) | `Workflows/Debate.md` |
+| Structured review with patchlist output | `Workflows/Debate.md` (patchlist mode) |
 | Quick consensus check (1 round, fast) | `Workflows/Quick.md` |
 | Resume interrupted session | `Workflows/Recovery.md` |
 | Pure adversarial analysis | RedTeam skill |
@@ -92,6 +93,9 @@ Running the **WorkflowName** workflow in the **Council** skill to ACTION...
 "Council with security: Evaluate this auth approach"
 -> DEBATE with Security agent added
 
+"Council (patchlist): Review these specifications"
+-> DEBATE with structured output format
+
 "Council recovery: Resume session 20260202-143052-a1b2c3d4"
 -> RECOVERY workflow (partial rerun) -> Continue from checkpoint
 ```
@@ -109,6 +113,8 @@ Running the **WorkflowName** workflow in the **Council** skill to ACTION...
 2. Add domain-specific experts as needed (security for auth, etc.)
 3. Review the transcript - insights are in the responses, not just positions
 4. Trust multi-agent convergence when it occurs
+5. Use patchlist mode for specification reviews (`"Council (patchlist): ..."`)
+6. For large reviews (5+ items), run multiple councils with shared context
 
 ---
 
